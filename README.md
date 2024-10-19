@@ -7,16 +7,3 @@ Copy code
 
 This is a Laravel application that implements a referral feature allowing users to invite others via email, track successful registrations, and manage referrals through an admin panel.
 
-
-
-
-
-
-
-
-
-
-
-
-
-Cha
