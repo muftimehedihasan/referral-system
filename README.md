@@ -28,8 +28,8 @@ Follow these steps to get your application running locally:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/yourusername/your-repo-name.git
-   cd your-repo-name
+   git@github.com:muftimehedihasan/referral-system.git
+   cd referral-system
 2. **Install PHP dependencies:**
 Make sure you have Composer installed, then run:
      ```bash
