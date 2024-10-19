@@ -69,6 +69,22 @@ Use the following command to start the built-in PHP server:
    php artisan db:seed
 Access the application at http://localhost:8000.
 
+## Usage
+- Navigate to the registration page at /register to create a new account.
+- After logging in, go to /referrals/create to send out referral invitations.
+- Invited users will receive an email containing a link to register with your referral code.
+- Admin users can view all referrals at /admin/referrals
+
+## Routes
+
+| Method | Route                  | Description                                           |
+|--------|------------------------|-------------------------------------------------------|
+| GET    | /register              | Display the registration form.                        |
+| POST   | /register              | Handle registration.                                  |
+| GET    | /referrals/create      | Show the referral creation form.                      |
+| POST   | /referrals             | Send the referral email.                              |
+| GET    | /admin/referrals       | Display the admin referral management page.           |
+
 
 
 
