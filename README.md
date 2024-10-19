@@ -86,5 +86,8 @@ Access the application at http://localhost:8000.
 | GET    | /admin/referrals       | Display the admin referral management page.           |
 
 
+## License
+This project is licensed under the MIT License. See the LICENSE file for details.
+
 
 
