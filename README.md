@@ -30,12 +30,12 @@ Follow these steps to get your application running locally:
    ```bash
    git clone https://github.com/yourusername/your-repo-name.git
    cd your-repo-name
-## 2. Install PHP dependencies:
+2. **Install PHP dependencies:
 Make sure you have Composer installed, then run:
      ```bash
     composer install
 
-## Copy the environment file:
+2 **Copy the environment file:
    ```bash
     cp .env.example .env
 
