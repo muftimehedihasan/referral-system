@@ -9,6 +9,6 @@ class AdminController extends Controller
     public function index()
     {
         $referrals = Referral::with('referrer')->get();
-        return view('admin.referrals', compact('referrals'));
+        return view('backend.admin.referrals', compact('referrals'));
     }
 }

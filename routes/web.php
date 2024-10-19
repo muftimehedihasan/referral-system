@@ -5,15 +5,16 @@ use App\Http\Middleware\AdminMiddleware;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReferralController;
+use App\Http\Controllers\DashboardController;
 
 
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+Route::get('/dashboard', [DashboardController::class, 'index'])
+    ->middleware(['auth', 'verified']) // Ensure the user is authenticated and their email is verified
+    ->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -29,9 +30,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-
-
-
+// Bakend routes
 Route::middleware([AdminMiddleware::class])->group(function () {
     Route::get('/admin/referrals', [AdminController::class, 'index'])->name('admin.referrals');
 });
