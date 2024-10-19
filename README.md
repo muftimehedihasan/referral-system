@@ -39,3 +39,20 @@ Make sure you have Composer installed, then run:
    ```bash
     cp .env.example .env
 
+4. **Generate an application key:**
+   ```bash
+   php artisan key:generate
+
+5. **Configure the database:**
+Open the .env file and set your database connection details. For example:
+    ```env
+    DB_CONNECTION=mysql
+    DB_HOST=127.0.0.1
+    DB_PORT=3306
+    DB_DATABASE=your_database_name
+    DB_USERNAME=your_database_user
+    DB_PASSWORD=your_database_password
+
+6. **Run migrations:**
+
+
