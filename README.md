@@ -54,5 +54,21 @@ Open the .env file and set your database connection details. For example:
     DB_PASSWORD=your_database_password
 
 6. **Run migrations:**
+This will set up the necessary tables in your database.
+    ```bash
+    php artisan migrate
+
+7. **(Optional) Seed the database:**
+   If you want to create an admin user, run:
+   ```bash
+   php artisan db:seed
+
+8. **Serve the application:**
+Use the following command to start the built-in PHP server:
+    ```bash
+   php artisan db:seed
+Access the application at http://localhost:8000.
+
+
 
 
