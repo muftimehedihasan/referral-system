@@ -35,7 +35,7 @@ Make sure you have Composer installed, then run:
      ```bash
     composer install
 
-2 **Copy the environment file:
+3. **Copy the environment file:
    ```bash
     cp .env.example .env
 
