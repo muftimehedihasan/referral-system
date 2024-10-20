@@ -14,7 +14,8 @@ class DashboardController extends Controller
 
         // // Check if the user is an admin and redirect accordingly
         // if ($user->role === 'admin') {
-        //     return redirect()->route('backend.admin.referrals');
+        //     // return redirect()->route('admin.dashboard');
+        //     return redirect()->route('admin.referrals');
         // }
 
         // For regular users, continue with the normal dashboard view

@@ -28,6 +28,8 @@ Route::middleware([AdminMiddleware::class])->group(function () {
 });
 
 
+
+// Profile routes
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -35,7 +37,8 @@ Route::middleware('auth')->group(function () {
 });
 
 
-
+/////////////////////////////////////////////////////////
+// Frontend routes
 Route::middleware(['auth'])->group(function () {
     Route::get('/referrals/create', [ReferralController::class, 'create'])->name('referrals.create');
     Route::post('/referrals', [ReferralController::class, 'store'])->name('referrals.store');
