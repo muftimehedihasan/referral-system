@@ -39,6 +39,19 @@ class User extends Authenticatable
         return $this->hasMany(Referral::class, 'referrer_id');
     }
 
+
+    // Method to count the total referrals
+    public function referralCount()
+    {
+        return $this->referrals()->count();
+    }
+
+    // Method to get all invited users
+    public function invitedUsers()
+    {
+        return $this->referrals()->get();
+    }
+
     /**
      * Get the attributes that should be cast.
      *
