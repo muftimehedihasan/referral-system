@@ -12,9 +12,21 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+
 Route::get('/dashboard', [DashboardController::class, 'index'])
-    ->middleware(['auth', 'verified']) // Ensure the user is authenticated and their email is verified
+    ->middleware(['auth', 'verified'])
     ->name('dashboard');
+
+// // Admin Dashboard route
+// Route::middleware(['auth', 'admin'])->group(function () {
+//     Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard');
+// });
+
+// Backend routes
+Route::middleware([AdminMiddleware::class])->group(function () {
+    Route::get('/admin/referrals', [AdminController::class, 'index'])->name('admin.referrals');
+});
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -30,10 +42,6 @@ Route::middleware(['auth'])->group(function () {
 });
 
 
-// Bakend routes
-Route::middleware([AdminMiddleware::class])->group(function () {
-    Route::get('/admin/referrals', [AdminController::class, 'index'])->name('admin.referrals');
-});
 
 
 
