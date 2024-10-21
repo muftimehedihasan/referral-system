@@ -16,13 +16,13 @@ class Referral extends Model
         'is_registered',
     ];
 
-    public static function generateReferralCode()
-    {
-        return bin2hex(random_bytes(5));
-    }
-
     public function referrer()
     {
         return $this->belongsTo(User::class, 'referrer_id');
+    }
+
+    public static function generateReferralCode()
+    {
+        return bin2hex(random_bytes(5));
     }
 }

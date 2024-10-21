@@ -2,26 +2,68 @@
 
 namespace App\Mail;
 
-use App\Models\Referral;
 use Illuminate\Bus\Queueable;
+use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use Illuminate\Mail\Mailables\Content;
+use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use App\Models\Referral;
 
 class ReferralInviteMail extends Mailable
 {
     use Queueable, SerializesModels;
 
     public $referral;
-
+    /**
+     * Create a new message instance.
+     */
     public function __construct(Referral $referral)
     {
         $this->referral = $referral;
     }
 
+    /**
+     * Get the message envelope.
+     */
+    public function envelope(): Envelope
+    {
+        return new Envelope(
+            subject: 'Referral Invite Mail',
+        );
+    }
+
+     /**
+     * Build the message.
+     *
+     * @return $this
+     */
     public function build()
     {
         return $this->view('emails.referral_invite')->with([
             'referral' => $this->referral,
         ]);
+    }
+
+
+
+    /**
+     * Get the message content definition.
+     */
+    // public function content(): Content
+    // {
+    //     return new Content(
+    //         view: 'view.name',
+    //     );
+    // }
+
+    /**
+     * Get the attachments for the message.
+     *
+     * @return array<int, \Illuminate\Mail\Mailables\Attachment>
+     */
+    public function attachments(): array
+    {
+        return [];
     }
 }
